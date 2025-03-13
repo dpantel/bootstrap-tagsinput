@@ -284,9 +284,6 @@
       var self = this;
 
       self.options = $.extend({}, defaultOptions, options);
-      // When itemValue is set, freeInput should always be false
-      if (self.objectItems)
-        self.options.freeInput = false;
 
       makeOptionItemFunction(self.options, 'itemValue');
       makeOptionItemFunction(self.options, 'itemText');
@@ -615,7 +612,15 @@
   function makeOptionItemFunction(options, key) {
     if (typeof options[key] !== 'function') {
       var propertyName = options[key];
-      options[key] = function(item) { return item[propertyName]; };
+      options[key] = function(item) {
+        if (typeof item === "object") {
+          return item[propertyName];
+        } else {
+          //fall back to returning the item itself, if it's not an object
+          //allows for "freeInput" even when items are objects
+          return item ? item.toString() : item;
+        }
+      };
     }
   }
   function makeOptionFunction(options, key) {
