@@ -1,3 +1,13 @@
+# Unofficial Fork
+
+The original project is abandoned. I have forked it and merged some outstanding pull requests, as well as made some small changes that are useful to me.
+
+The only updated file is `src/bootstrap-tagsinput.js`. None of the files in `dist/` have been updated.
+
+Feel free to use this fork at your own risk.
+
+Original ReadMe follows...
+
 # Bootstrap Tags Input [![Build Status](https://travis-ci.org/bootstrap-tagsinput/bootstrap-tagsinput.svg?branch=master)](https://travis-ci.org/bootstrap-tagsinput/bootstrap-tagsinput)
 Bootstrap Tags Input is a jQuery plugin providing a Twitter Bootstrap user interface for managing tags.
 
