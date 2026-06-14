@@ -144,7 +144,7 @@
       // Check to see if the tag exists in its raw or uri-encoded form
       var optionExists = (
         $('option[value="' + encodeURIComponent(itemValue) + '"]', self.$element).length ||
-        $('option[value="' + htmlEncode(itemValue) + '"]', self.$element).length
+        $("option[value='" + htmlEncode(itemValue) + "']", self.$element).length
       );
 
       // add <option /> if item represents a value not present in one of the <select />'s options
